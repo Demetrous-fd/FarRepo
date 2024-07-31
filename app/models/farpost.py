@@ -9,7 +9,7 @@ class PostPreview(Base):
     __tablename__ = "farposts_preview"
     
     id = sa.Column(sa.BigInteger(), primary_key=True)
-    title = sa.Column(sa.String(70))
+    title = sa.Column(sa.String(128))
     query = sa.Column(sa.Text())
     author = sa.Column(sa.String(64))
     views_count = sa.Column(sa.Integer())
