@@ -24,6 +24,8 @@ services:
       DATABASE_DSN: "postgresql+asyncpg://${PG_USER:-postgres}:${PG_PASSWORD:-postgres}@postgres:5432/${PG_DB:-postgres}"
       REDIS_DSN: "redis://redis:6379"
     command: celery -A app:celery worker --loglevel=INFO
+    volumes:
+      - /dev/shm:/dev/shm
   
   celery-beat:
     image: farpost-app
